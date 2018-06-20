@@ -1,0 +1,23 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">Home</li>
+    </ol>
+  </nav>
+<div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-4" style="text-align:center" *ngFor="let icon of icons">
+        <div>
+                <a href=""> <span><i class={{icon.iconClass}}></i></span></a>
+                <div [ngSwitch]="icon.name">
+                    <div  *ngSwitchCase="'Registration'">
+                        <a href="#" role="button" class="btn popovers" data-trigger="focus" data-toggle="popover" title="" data-content="<a href='/empreg' title='test add link'>Emp reg</a> <br><a href='/medreg' title='test add link'>Medical Staff Registration</a><br><a href='/alrreg' title='test add link'>Already Registered OPD</a>" data-original-title="Select Type of Registration"><h2>{{icon.name}}</h2></a>
+                    </div>
+                    <div   *ngSwitchCase="'Doctor'">
+                        <a href="#" role="button" class="btn popovers" data-trigger="focus" data-toggle="popover" title="" data-content="<a href='' title='test add link'>link on content</a>" data-original-title="Select Type of Doctor"><h2>{{icon.name}}</h2></a>
+                    </div>
+                    <div   *ngSwitchCase="'Checkup'">
+                            <a href="#" role="button" class="btn popovers" data-trigger="focus" data-toggle="popover" title="" data-content="<a href='/checkup/basicinfo' title='test add link'>Basic Info</a><br>" data-original-title="Select Type of Doctor"><h2>{{icon.name}}</h2></a>
+                 </div>
+                </div>
+        </div>
+    </div>
+</div>

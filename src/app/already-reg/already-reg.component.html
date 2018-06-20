@@ -1,0 +1,163 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Library</li>
+    </ol>
+  </nav>
+<div class="container" >
+    <div style="text-align: center;margin:0;width:100%;background-color: steelblue;color: white;font-size: 30px;">
+      <p style="padding-top:2%;padding-bottom: 2%"><i class="fas fa-registered"></i> Already Registered</p>
+    </div>
+    <!-- method="POST" action="http://localhost:4600" -->
+      <form  style="padding: 5px" >
+          <div class="form-row" >
+            <div class="col-lg-4 col-md-4">
+              <label for="inputState">Category</label>
+              <select  (change)="onChange($event.target.value)" id="inputState" id="in1" class="form-control">
+                <option selected>Choose...</option>
+                <option *ngFor="let opts of categoryopt">{{opts.opt}}</option>
+              </select>
+            </div>
+            <div class="col-md-4 mb-3" >
+                <label for="validationDefault02">MIC NO</label>
+                <input name="NameEmp" type="text" class="form-control" id="validationDefault02" placeholder="MIC NO"  required>
+              </div>
+              <div class="col-md-4 mb-3" >
+                <label for="inputState">Relation</label>
+                <select  (change)="onChange($event.target.value)" id="inputState" id="in1" class="form-control">
+                <option selected>Choose...</option>
+                <option *ngFor="let opts of relations">{{opts.opt}}</option>
+              </select>
+            </div>
+              
+          </div>
+          <div style="text-align: center;margin:0;width:100%;background-color: steelblue;color: white;font-size: 30px;">
+              <p style="padding-top:2%;padding-bottom:2% "><i class="fas fa-registered"></i>Patient's Particulars</p>
+          </div>
+          <div class="form-row">
+              <div class="col-md-6 mb-3" >
+                  <label for="inputState">Refer To</label>
+                  <select  (change)="onChange($event.target.value)" id="inputState" id="in1" class="form-control">
+                  <option selected>Choose...</option>
+                  <option *ngFor="let opts of departments">{{opts.opt}}</option>
+                </select>
+              </div>
+              <div class="col-md-6 mb-3" >
+                  <label for="inputState">Refer Case(Y/N)</label>
+                  <select  (change)="onChange($event.target.value)" id="inputState" id="in1" class="form-control">
+                  <option selected>Choose...</option>
+                  <option>Y</option>
+                  <option>N</option>                  
+                </select>
+              </div>
+          </div>
+      
+          <div class="form-row">
+              <div class="col-md-6 mb-3" style="width:0">
+                <label for="validationDefault03">Name</label>
+                <input type="text" class="form-control" id="validationDefault03" placeholder="Name" required>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                  <label for="validationDefault03">Age</label> 
+                   <!-- <div class="form"> -->
+                      <div class="form-row" style="padding-top: 0;margin-top:0">
+                          <div class="col-lg-4 col-md-4">
+                              <input type="text" class="form-control" id="validationDefault03" placeholder="Yrs" required>
+                          </div> 
+                          <div class="col-lg-4 col-md-4">
+                              <input type="text" class="form-control" id="validationDefault03" placeholder="Mon" required>
+                          </div> 
+                          <div class="col-lg-4 col-md-4">
+                              <input type="text" class="form-control" id="validationDefault03" placeholder="Days" required>
+                          </div>
+                      </div>
+                   <!-- </div> -->
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <label for="validationDefault03">Blood Group</label>
+                <input type="text" class="form-control"  id="validationDefault03"  required placeholder="blood group">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="validationDefault04">Sex</label>
+                <input type="text" class="form-control "  id="validationDefault04" placeholder="Sex" required>
+              </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label for="validationDefault03">Indentity</label>
+                  <input type="text" class="form-control"  id="validationDefault03"  required placeholder="Indentity">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="validationDefault04">Refer From</label>
+                  <input type="text" class="form-control "  id="validationDefault04" placeholder="Refer from" required>
+                </div>
+              </div>
+              <div style="text-align: center;margin:0;width:100%;background-color: steelblue;color: white;font-size: 30px;">
+                  <p style="padding-top:2%;padding-bottom: 2%"><i class="fas fa-registered"></i> Patients Particulars </p>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label for="validationDefault03">Employee Name</label>
+                      <input type="text" class="form-control"  id="validationDefault03"  required placeholder="Employee Name ">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="validationDefault04">Railway MIC NO</label>
+                      <input type="text" class="form-control "  id="validationDefault04" placeholder="MIC NO" required>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                      <div class="col-md-6 mb-3">
+                        <label for="validationDefault03">Basic Info</label>
+                        <input type="text" class="form-control"  id="validationDefault03"  required placeholder="Basic Info">
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <label for="validationDefault04">Designation</label>
+                        <input type="text" class="form-control "  id="validationDefault04" placeholder="Designation" required>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                          <label for="validationDefault03">RLY Code</label>
+                          <input type="text" class="form-control"  id="validationDefault03"  required placeholder="RlY code">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                          <label for="validationDefault04">Department</label>
+                          <input type="text" class="form-control "  id="validationDefault04" placeholder="Department" required>
+                        </div>
+                      </div>
+                      <div class="form-row">
+                          <div class="col-md-6 mb-3">
+                            <label for="validationDefault03">Validity Period</label>
+                            <input type="text" class="form-control"  id="validationDefault03"  required placeholder="Validity Period">
+                          </div>
+                          <div class="col-md-6 mb-3">
+                            <label for="validationDefault04">Control Officer</label>
+                            <input type="text" class="form-control "  id="validationDefault04" placeholder="Control Officer" required>
+                          </div>
+                        </div>
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <label for="validationDefault03">Division</label>
+                <input type="text" class="form-control"  id="validationDefault03"  required placeholder="Division">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="validationDefault04">Address</label>
+                <input type="text" class="form-control "  id="validationDefault04" placeholder="Address" required>
+              </div>
+            </div>
+            <div class="form-row" style="text-align: center">
+                <div class="col-md-4 mb-3">
+                  <button  (click)="makeid()" class="btn btn-primary" type="submit" >Save</button>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <button  (click)="makeid()" class="btn btn-primary" type="submit">CAncel</button>
+                 </div>
+                <div class="col-md-4 mb-3">
+                      <button  (click)="makeid()" class="btn btn-primary" type="submit" >Exit</button>
+                </div>
+            </div>
+            
+        </form>
+  </div>
