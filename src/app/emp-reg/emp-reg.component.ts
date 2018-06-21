@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ZonesService } from '../zones.service';
 
 @Component({
   selector: 'app-emp-reg',
@@ -6,11 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./emp-reg.component.css']
 })
 export class EmpRegComponent implements OnInit {
-
+  zones:any=[]
   categoryopt:any[];
-  constructor() { }
+  constructor(private zoneService:ZonesService) { }
   category:any;
   ngOnInit() {
+    this.zoneService.getAllZones().subscribe(zones=>{
+      this.zones=zones;
+    })
     this.categoryopt=[
       {opt:"NR"},
       {opt:"REIHS"},

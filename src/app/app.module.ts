@@ -10,6 +10,9 @@ import { GpeComponent } from './gpe/gpe.component';
 import { SceComponent } from './sce/sce.component';
 import { BasicinfoComponent } from './basicinfo/basicinfo.component';
 import { InvestComponent } from './invest/invest.component';
+import {HttpClientModule} from '@angular/common/http'
+import { ZonesService } from './zones.service';
+
 
 @NgModule({
   declarations: [
@@ -34,9 +37,10 @@ import { InvestComponent } from './invest/invest.component';
       {path:'checkup/gpe',component:GpeComponent},
       {path:'checkup/sce',component:SceComponent},
       {path:'checkup/invest',component:InvestComponent}
-    ])
+    ]),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ZonesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
