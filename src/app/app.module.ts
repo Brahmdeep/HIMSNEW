@@ -12,6 +12,7 @@ import { BasicinfoComponent } from './basicinfo/basicinfo.component';
 import { InvestComponent } from './invest/invest.component';
 import {HttpClientModule} from '@angular/common/http'
 import { ZonesService } from './zones.service';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { ZonesService } from './zones.service';
       {path:'checkup/sce',component:SceComponent},
       {path:'checkup/invest',component:InvestComponent}
     ]),
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
   ],
   providers: [ZonesService],
   bootstrap: [AppComponent]
