@@ -13,6 +13,11 @@ import { InvestComponent } from './invest/invest.component';
 import {HttpClientModule} from '@angular/common/http'
 import { ZonesService } from './zones.service';
 import { CommonModule } from '@angular/common';
+import {FormsModule} from '@angular/forms';
+import{FlashMessagesModule, FlashMessagesService} from 'angular2-flash-messages';
+import{ValidateService} from './services/validate.service'
+import{SendDataService} from './services/send-data.service'
+import { HttpModule } from '@angular/http';
 
 
 @NgModule({
@@ -40,9 +45,12 @@ import { CommonModule } from '@angular/common';
       {path:'checkup/invest',component:InvestComponent}
     ]),
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    FormsModule,
+    FlashMessagesModule,
+    HttpModule
   ],
-  providers: [ZonesService],
+  providers: [SendDataService,ZonesService,ValidateService,FlashMessagesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

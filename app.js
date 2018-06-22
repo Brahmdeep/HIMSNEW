@@ -13,12 +13,11 @@ const routes=require('./server/routes/routes');
 app.use(express.static(path.join(__dirname,'dist/himsPRoject')));
 app.use('/routes',routes);
 
+
 //CAtch all other routes request and return it to the index
 app.get('*',(req,res)=>{
     res.sendFile(path.join(__dirname, 'dist/himsPRoject/index.html'));
-    var bod=req.body.NameEmp;
-    console.log("before bod");
-    console.log(bod);
+
 })
 
 

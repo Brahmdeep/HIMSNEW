@@ -9,6 +9,12 @@ import { CommonModule } from '@angular/common';
 })
 
 export class EmpRegComponent implements OnInit {
+ 
+  //Properties
+  
+ 
+ 
+ 
   zone:any;
   zones:any=[];
   categoryopt:any[];
