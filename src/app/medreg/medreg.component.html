@@ -27,7 +27,8 @@
         <div class="form-row">
           <div class="col-md-4 mb-3">
             <label for="validationDefault03">Health Care Center</label>
-            <input type="text" [(ngModel)]="healthcarecenter" name="healthcarecenter" class="form-control" readonly id="validationDefault03" value="Railway Hospital" >
+            <input type="text"  ngModel="RailwaysHospital" name="healthcarecenter" ng-init="healthcarecente='Railway Hospital'" value="Railway Hospital" class="form-control" readonly name="center">
+            <!-- <input type="text" [(ngModel)]="healthcarecenter"  ng-init="healthcarecenter='Railway Hospital'" name="healthcarecenter" class="form-control" readonly id="validationDefault03" value="Railway Hospital" > -->
           </div>
           <div class="col-md-4 mb-3">
             <label for="validationDefault04">Designation</label>
@@ -50,18 +51,17 @@
             </div>
             <div class="col-md-4 mb-3">
                 <label for="validationDefault04">Mobile No.</label>
-                <input type="text" [(ngModel)]="mobile" name="mobile" class="form-control "  id="validationDefault04" placeholder="Mobile No" required>
+                <input type="number" [(ngModel)]="mobile" name="mobile" class="form-control "  id="validationDefault04" placeholder="Mobile No" required>
               </div>
           </div>
           <div class="form-row">
               <div class="col-lg-4 col-md-3 mb-3">
                 <label for="validationDefault04">Railway No.</label>
-                <input type="text" [(ngModel)]="railwayno" name="railwayno" class="form-control "  id="validationDefault04" placeholder="State" required>
+                <input type="number" [(ngModel)]="railwayno" name="railwayno" class="form-control "  id="validationDefault04" placeholder="State" required>
               </div>
               <div class="col-lg-4 col-md-4">
                   <label for="inputState">Select Role</label>
                   <select [(ngModel)]="role" name="role" id="inputState" class="form-control">
-                    <option selected>Choose...</option>
                     <option>Employee</option>
                     <option>Guard</option>
                     <option>Clerk</option>

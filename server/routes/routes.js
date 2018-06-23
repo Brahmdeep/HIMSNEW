@@ -9,7 +9,7 @@ var con = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "brsh1091",
-    database: "mydb"
+    database: "hmis"
   });
 router.get('/',(req,res)=>{
     res.send('it works');
@@ -41,10 +41,11 @@ router.post('/register',(req,res)=>{
             console.log('error occured')
         };
         console.log("Connected!");
-        var sql = "INSERT INTO customers (name, address) VALUES ?";
+        var sql = "INSERT INTO medicalStaff (name, address) VALUES ?";
         var values=[
             [name,'highway']
         ];
+        //
         con.query(sql,[values], function (err, result) {
           if (err) throw err;
           console.log("1 record inserted");

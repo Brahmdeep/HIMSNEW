@@ -26,6 +26,9 @@ export class MedregComponent implements OnInit {
   constructor(private validateService:ValidateService,private flashMessage:FlashMessagesService,private sendService:SendDataService,private router:Router) { }
 
   ngOnInit() {
+    function main($scope){
+      $scope.healthcarecenter='bob';
+    }
   }
   onRegisterSubmit(){
     const staff={
@@ -41,11 +44,11 @@ export class MedregComponent implements OnInit {
     }
 
     if(!this.validateService.validateRegister(staff)){
-      this.flashMessage.show('plase fill',{cssClass:'alert-danger',timeout:3000});
+      this.flashMessage.show('Please fill all the "Fields"',{cssClass:'alert-danger',timeout:3000});
       return false;
     }
     if(!this.validateService.validateEmail(staff.email)){
-      this.flashMessage.show('plase fill email properly',{cssClass:'alert-danger',timeout:3000});
+      this.flashMessage.show('Please fill email in proper email format',{cssClass:'alert-danger',timeout:3000});
       return false;
     }
     //Register Staff
