@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ValidateService} from '../../services/validate.service'
+import {ValidateService} from '../../../services/ValidationServices/validate.service'
 import {FlashMessagesService} from 'angular2-flash-messages';
-import {SendDataService} from '../../services/send-data.service'
+import {SendDataService} from '../../../services/PostingServices/send-data.service'
 import{Router} from '@angular/router'
 @Component({
   selector: 'app-medreg',
