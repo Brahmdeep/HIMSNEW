@@ -21,6 +21,9 @@ export class HomeIconsComponent implements OnInit {
       {name:"Annual Health Checkup",iconClass:"fas fa-heartbeat fa-5x"}
      ]
   }
+  onclick(){
+    alert("hello clicked");
+  }
  
 
 }
