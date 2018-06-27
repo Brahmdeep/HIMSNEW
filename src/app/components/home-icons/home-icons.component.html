@@ -1,0 +1,59 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">Home</li>
+    </ol>
+  </nav>
+<div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-4" style="text-align:center" *ngFor="let icon of icons">
+        <div>
+                <a href=""> <span><i class={{icon.iconClass}}></i></span></a>
+                <div [ngSwitch]="icon.name">
+                    <div *ngSwitchCase="'Registration'">
+                        <a href="#" role="button" class="btn popovers" data-trigger="focus" data-toggle="popover" title="" data-content="<a href='/empreg' title='test add link'>Employee Registration</a> 
+                  <br><a href='/medreg' title='test add link'>Medical Staff Registraion</a>
+                  <br><a href='/alrreg' title='test add link'>New/Old OPD Registraion</a>
+                  <br><a href='#' title='test add link'>Causality Registration</a>" data-original-title="Select Type of Registration">
+                            <h2>{{icon.name}}</h2>
+                        </a>
+                    </div>
+                    <div *ngSwitchCase="'Dr. OPD'">
+                        <a href="#" role="button" class="btn popovers" data-trigger="focus" data-toggle="popover" title="" data-content="<a href='' title='test add link'>OPD Patient Checkup</a>
+                            <br><a href='' title='test add link'>OPD Referred</a>" data-original-title="Select Type of Doctor">
+                            <h2>{{icon.name}}</h2>
+                        </a>
+                    </div>
+                    <div *ngSwitchCase="'Diagnostics'">
+                        <a href="#" role="button" class="btn popovers" data-trigger="focus" data-toggle="popover" title="" data-content="<a href='' title='test add link'>Pathology Test</a>
+                            <br><a href='' title='test add link'>X-ray</a>" data-original-title="Select Type of Diagnostics">
+                            <h2>{{icon.name}}</h2>
+                        </a>
+                    </div>
+                    <div *ngSwitchCase="'MIS Report'">
+                        <a href="#" role="button" class="btn popovers" data-trigger="focus" data-toggle="popover" title="" data-content="<a href='' title='test add link'>Opd Registration</a>
+                              <br><a href='' title='test add link'>Major Test Report</a>" data-original-title="Select Type of Report">
+                            <h2>{{icon.name}}</h2>
+                        </a>
+                    </div>
+                    <div *ngSwitchCase="'Store Department'">
+                        <a href="#" role="button" class="btn popovers" data-trigger="focus" data-toggle="popover" title="" data-content="<a href='' title='test add link'>AMI</a>
+                              <br><a href='' title='test add link'>Delivery Challan</a>" data-original-title="Store Department Activity">
+                            <h2>{{icon.name}}</h2>
+                        </a>
+                    </div>
+                    <div *ngSwitchCase="'Reimbursment'">
+                        <a href="#" role="button" class="btn popovers" data-trigger="focus" data-toggle="popover" title="" data-content="<a href='' title='test add link'>Health Unit Process</a>
+                                <br><a href='' title='test add link'>Final HQ Bill Checkup</a>" data-original-title="Reimbursment File Tracking">
+                            <h2>{{icon.name}}</h2>
+                        </a>
+                    </div>
+                    <div *ngSwitchCase="'Annual Health Checkup'">
+                        <a href="#" role="button" class="btn popovers" data-trigger="focus" data-toggle="popover" title="" data-content="<a href='' title='test add link'>Chekup Employee</a>
+                                  <br><a href='' title='test add link'>Checkup History</a>" data-original-title="Annual Health checkup">
+                            <h2>{{icon.name}}</h2>
+                        </a>
+                    </div>
+                </div>
+    
+        </div>
+    </div>
+</div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ZonesService } from '../zones.service';
+import { ZonesService } from '../../services/zones.service';
 import { CommonModule } from '@angular/common';  
 
 @Component({
