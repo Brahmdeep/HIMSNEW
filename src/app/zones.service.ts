@@ -8,16 +8,22 @@ import { map } from 'rxjs/operators';
 export class ZonesService {
   constructor(private http:HttpClient) {}
   getAllZones(){
-    return this.http.get('/routes/zones/').pipe(map((zones)=>{
-      console.log("sending data from console "+zones);
-      return zones;
-    }));
+    return new Promise(resolve=>{
+      this.http.get('http://localhost:3000/api/ZoneMsts').subscribe(data=>{
+        resolve(data);
+      },err=>{
+        console.log(err);
+      })
+    })
 }
   getAllDivisions(){
-    return this.http.get('/routes/divisions').pipe(map((divisions)=>{
-      console.log("sending all the division "+divisions);
-      return divisions;
-    }))
+    return new Promise(resolve=>{
+      this.http.get('http://localhost:3000/api/DivisionMsts').subscribe(data=>{
+        resolve(data);
+      },err=>{
+        console.log(err);
+      })
+    })
   }
 
 }

@@ -26,10 +26,10 @@ export class EmpRegComponent implements OnInit {
   constructor(private zoneService:ZonesService) { }
   category:any;
   ngOnInit() {
-    this.zoneService.getAllZones().subscribe(zones=>{
+    this.zoneService.getAllZones().then(zones=>{
       this.zones=zones;
     })
-    this.zoneService.getAllDivisions().subscribe(divisions=>{
+    this.zoneService.getAllDivisions().then(divisions=>{
       this.divisions=divisions;
     })
     this.categoryopt=[

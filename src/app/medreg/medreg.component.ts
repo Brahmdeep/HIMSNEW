@@ -32,7 +32,7 @@ export class MedregComponent implements OnInit {
   }
   onRegisterSubmit(){
     const staff={
-      name:this.firstname,
+      name:this.firstname+this.middlename+this.lastname,
       email:this.email,
       center:this.healthcarecenter,
       designation:this.designation,
@@ -52,10 +52,10 @@ export class MedregComponent implements OnInit {
       return false;
     }
     //Register Staff
-    this.sendService.registerStaff(staff).subscribe(data=>{
-     this.flashMessage.show('registered',{cssClass:'alert-danger',timeout:3000});   
+    this.sendService.registerStaff(staff).then(data=>{
+      console.log(data);
     })
-    window.location.href = "http://localhost:4600/";
-    this.flashMessage.show('registered',{cssClass:'alert-success',timeout:3000});    
+    this.flashMessage.show('registered',{cssClass:'alert-success',timeout:3000}); 
+    window.location.href="http://localhost:4200";   
   }
 }

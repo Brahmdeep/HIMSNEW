@@ -12,12 +12,26 @@ export class SendDataService {
   constructor(private http:Http) { }
 
   registerStaff(staff){
-    let headers=new Headers();
-    headers.append('Content-Type','application/json');
-    return this.http.post('/routes/register',staff,{headers:headers})
-    .pipe(map((res)=>{
-      console.log('sending data '+res);
-      return res;
-    }));
+    console.log(staff);
+    return new Promise(resolve=>{
+      this.http.post('http://localhost:3000/api/Medicalstaffs',
+      {
+       "firstname": staff.name,
+       "middlename": null,
+       "lastname": null,
+       "healthcenter": staff.center,
+       "designation": staff.designation,
+       "department": staff.department,
+       "station": staff.station,
+       "email": staff.email,
+       "mobile": staff.mobile,
+       "railwayno": staff.railno,
+       "role": staff.role
+      }).subscribe(data=>{
+        resolve(data);
+      },err=>{
+        console.log(err);
+      })
+    })
   }
 }
