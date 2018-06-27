@@ -19,7 +19,7 @@ export class SendDataService {
        "firstname": staff.name,
        "middlename": null,
        "lastname": null,
-       "healthcenter": staff.center,
+       "healthcenter": "Railways Hospital",
        "designation": staff.designation,
        "department": staff.department,
        "station": staff.station,
