@@ -18,7 +18,8 @@ export class HomeIconsComponent implements OnInit {
       {name:"MIS Report",iconClass:"far fa-address-card fa-5x"},
       {name:"Store Department",iconClass:"fas fa-store fa-5x"},
       {name:"Reimbursment",iconClass:"fas fa-stream fa-5x"},
-      {name:"Annual Health Checkup",iconClass:"fas fa-heartbeat fa-5x"}
+      {name:"Annual Health Checkup",iconClass:"fas fa-heartbeat fa-5x"},
+      {name:"Staff Management",iconClass:"fas fa-user fa-5x"}
      ]
   }
   onclick(){
