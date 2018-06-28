@@ -11,10 +11,6 @@ import { CommonModule } from '@angular/common';
 export class EmpRegComponent implements OnInit {
  
   //Properties
-  
- 
- 
- 
   zone:any;
   zones:any=[];
   categoryopt:any[];
@@ -57,11 +53,11 @@ export class EmpRegComponent implements OnInit {
     this.availabledivisions=[];
     this.zone=deviceValue;
     this.forCompare=this.zone.substring(0,2);
-    for(var i=0;i<this.divisions.length;i++){
-        if(this.forCompare==this.divisions[i].znCd){
-        this.availabledivisions.push(this.divisions[i]);
-    }
+    this.zoneService.getAvailableDivisions(this.zone.substring(0,2)).then(availabledivision=>{
+      console.log(availabledivision);
+      this.availabledivisions=availabledivision;
+      console.log(this.availabledivisions);
+    })
    }
  }
  
-}

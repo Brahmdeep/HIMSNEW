@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import{ZonesService} from '../../../services/FetchingServices/zones.service'
 
 @Component({
   selector: 'app-hospital-reg',
@@ -7,9 +8,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HospitalRegComponent implements OnInit {
 
-  constructor() { }
+  selectedZone:any;
+  zones:any=[];
+  divisions:any=[];
+  availableDivision:any=[];
+
+  constructor(private zoneService:ZonesService) { }
 
   ngOnInit() {
+    this.zoneService.getAllZones().then(zones=>{
+      this.zones=zones;
+    })
+    this.zoneService.getAllDivisions().then(divisions=>{
+      this.divisions=divisions;
+    })
   }
-
+  
+  onChangezone(deviceValue) {
+    this.selectedZone=deviceValue;
+    this.availableDivision=[];
+    this.zoneService.getAvailableDivisions(this.selectedZone.substring(0,2)).then(availableDivision=>{
+      console.log(availableDivision);
+      this.availableDivision=availableDivision;
+      console.log(this.availableDivision);
+    })
+    
+  }
 }
