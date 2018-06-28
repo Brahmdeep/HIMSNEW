@@ -18,6 +18,7 @@ import{FlashMessagesModule, FlashMessagesService} from 'angular2-flash-messages'
 import{ValidateService} from './services/ValidationServices/validate.service'
 import{SendDataService} from './services/PostingServices/send-data.service'
 import { HttpModule } from '@angular/http';
+import { HospitalRegComponent } from './components/Reg-components/hospital-reg/hospital-reg.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { HttpModule } from '@angular/http';
     GpeComponent,
     SceComponent,
     BasicinfoComponent,
-    InvestComponent
+    InvestComponent,
+    HospitalRegComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,8 @@ import { HttpModule } from '@angular/http';
       {path:'checkup/basicinfo',component:BasicinfoComponent},
       {path:'checkup/gpe',component:GpeComponent},
       {path:'checkup/sce',component:SceComponent},
-      {path:'checkup/invest',component:InvestComponent}
+      {path:'checkup/invest',component:InvestComponent},
+      {path:'hospitalreg',component:HospitalRegComponent}
     ]),
     HttpClientModule,
     CommonModule,
