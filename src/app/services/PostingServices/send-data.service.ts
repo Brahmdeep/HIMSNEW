@@ -34,5 +34,23 @@ export class SendDataService {
       })
     })
   }
+
+  registerHospital(hospital){
+    return new Promise(resolve=>{
+      this.http.post('http://localhost:3000/api/MedicalExamCentreMsts',
+      {
+        "hospitalName":hospital.name,
+        "healthCareCenterCode":hospital.center,
+        "zoneCd":hospital.zoneCode,
+        "divCd":hospital.divisionCode,
+        "stationCode":hospital.stationCd,
+        "hospitalId":hospital.hospitalid
+      }).subscribe(data=>{
+        resolve(data);
+      },err=>{
+        console.log(err);
+      })
+    })
+  }
   
 }

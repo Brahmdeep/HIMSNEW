@@ -17,7 +17,7 @@ export class ZonesService {
         console.log(err);
       })
     })
-}
+  }
   getAllDivisions(){
     return new Promise(resolve=>{
       this.http.get('http://localhost:3000/api/DivisionMsts').subscribe(data=>{
@@ -28,9 +28,17 @@ export class ZonesService {
     })
   }
   getAvailableDivisions(zone){
-    console.log(zone);
     return new Promise(resolve=>{
       this.http.get('http://localhost:3000/api/DivisionMsts?filter=%7B%22where%22%3A%20%7B%22znCd%22%3A%22'+zone+'%22%7D%7D').subscribe(data=>{
+        resolve(data);
+      },err=>{
+        console.log(err);
+      })
+    })
+  }
+  getAvailableStations(division){
+    return new Promise(resolve=>{
+      this.http.get('http://localhost:3000/api/StationMsts?filter=%7B%22where%22%3A%7B%22divCd%22%3A%22'+division+'%22%7D%7D').subscribe(data=>{
         resolve(data);
       },err=>{
         console.log(err);
