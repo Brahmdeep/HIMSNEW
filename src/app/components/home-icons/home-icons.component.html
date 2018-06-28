@@ -4,7 +4,7 @@
     </ol>
   </nav>
 <div class="row">
-    <div class="col-lg-4 col-md-4 col-sm-4" style="text-align:center" *ngFor="let icon of icons">
+    <div class="col-lg-4 col-md-3 col-sm-3" style="text-align:center;" *ngFor="let icon of icons">
         <div>
                 <a href=""> <span><i class={{icon.iconClass}}></i></span></a>
                 <div [ngSwitch]="icon.name">
@@ -48,6 +48,12 @@
                         </a>
                     </div>
                     <div *ngSwitchCase="'Annual Health Checkup'">
+                        <a href="#" role="button" class="btn popovers" data-trigger="focus" data-toggle="popover" title="" data-content="<a href='' title='test add link'>Chekup Employee</a>
+                                  <br><a href='' title='test add link'>Checkup History</a>" data-original-title="Annual Health checkup">
+                            <h2>{{icon.name}}</h2>
+                        </a>
+                    </div>
+                    <div *ngSwitchCase="'Staff'">
                         <a href="#" role="button" class="btn popovers" data-trigger="focus" data-toggle="popover" title="" data-content="<a href='' title='test add link'>Chekup Employee</a>
                                   <br><a href='' title='test add link'>Checkup History</a>" data-original-title="Annual Health checkup">
                             <h2>{{icon.name}}</h2>

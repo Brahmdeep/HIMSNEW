@@ -12,10 +12,13 @@ export class HospitalRegComponent implements OnInit {
   zones:any=[];
   divisions:any=[];
   availableDivision:any=[];
+  uniqueid:String;
 
   constructor(private zoneService:ZonesService) { }
 
   ngOnInit() {
+    this.uniqueid="H"+Date.now();
+    console.log(this.uniqueid.substring(0,5));
     this.zoneService.getAllZones().then(zones=>{
       this.zones=zones;
     })
