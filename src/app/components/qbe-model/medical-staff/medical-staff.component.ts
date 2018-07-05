@@ -35,9 +35,9 @@ export class MedicalStaffComponent implements OnInit {
     if(value=="" && value2==""){
       this.flashMessage.show('Please Enter a Value',{cssClass:'alert-danger',timeout:3000}); 
     }else if(value!="" ){
-      this.requestUrl="http://localhost:3000/api/MedicalStaffQbes?filter=%7B%22where%22%3A%7B%22speciality%22%3A%20%22"+value+"%22%7D%7D";
+      this.requestUrl="http://localhost:3000/api/MedicalStaffQbes?filter=%7B%22where%22%3A%7B%22speciality%22%3A%20%22"+value+"%22%2C%22statuscode%22%3A%201%7D%7D";
     }else if(value2!=""){
-      this.requestUrl="http://localhost:3000/api/MedicalStaffQbes?filter=%7B%22where%22%3A%7B%22designation%22%3A%20%22"+value2+"%22%7D%7D"
+      this.requestUrl="http://localhost:3000/api/MedicalStaffQbes?filter=%7B%22where%22%3A%7B%22designation%22%3A%22"+value2+"%22%2C%22statuscode%22%3A%201%7D%7D"
     }
     this.getdata.getAlldata(this.requestUrl).then(data=>{
       console.log(data);
@@ -80,8 +80,7 @@ export class MedicalStaffComponent implements OnInit {
 
 
   onclickDelete(doctor){
-    doctor.speciality=-1;
-    doctor.designation=-1;
+    doctor.statuscode=0;
     this.requestUrl="http://localhost:3000/api/MedicalStaffQbes";
     this.sendData.modifydata(this.requestUrl,doctor).then(data=>{
       console.log(data);

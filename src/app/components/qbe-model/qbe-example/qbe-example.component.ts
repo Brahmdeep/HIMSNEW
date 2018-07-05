@@ -39,9 +39,9 @@ export class QbeExampleComponent implements OnInit {
     if(this.value=="" && value2==""){
       this.flashMessage.show('Please Enter a Value',{cssClass:'alert-danger',timeout:3000}); 
     }else if(this.value!=""){
-      this.requestUrl="http://localhost:3000/api/DivisionMsts?filter=%7B%22where%22%3A%7B%22znCd%22%3A%22"+this.value+"%22%7D%7D";
+      this.requestUrl="http://localhost:3000/api/DivisionMsts?filter=%7B%22where%22%3A%7B%20%22znCd%22%3A%20%22"+this.value+"%22%2C%22statuscode%22%3A%201%7D%7D";
     }else if(value2!=""){
-      this.requestUrl="http://localhost:3000/api/DivisionMsts?filter=%7B%22where%22%3A%7B%22divCd%22%3A%20%22"+value2+"%22%7D%7D";
+      this.requestUrl="http://localhost:3000/api/DivisionMsts?filter=%7B%22where%22%3A%7B%20%22divCd%22%3A%20%22"+value2+"%22%2C%22statuscode%22%3A%201%7D%7D";
     }
     this.getreq.getAlldata(this.requestUrl).then(data=>{
       this.divisions=data;
@@ -75,7 +75,7 @@ export class QbeExampleComponent implements OnInit {
 
     }
     onclickDelete(division){
-      division.znCd=-1;
+      division.statuscode=0;
       this.requestUrl="http://localhost:3000/api/DivisionMsts";
       this.sendData.modifydata(this.requestUrl,division).then(data=>{
         console.log(data);
