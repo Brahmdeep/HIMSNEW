@@ -31,7 +31,7 @@ export class HospitalRegComponent implements OnInit {
   private sendData:SendDataService) { }
 
   ngOnInit() {
-   var url;
+    var url="http://localhost:3000/api/ZoneMsts";
     this.uniqueid="H"+Date.now();
     console.log(this.uniqueid);
     this.zoneService.getAlldata(url).then(zones=>{

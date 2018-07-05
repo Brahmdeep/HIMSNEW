@@ -22,7 +22,7 @@ export class EmpRegComponent implements OnInit {
   constructor(private zoneService:ZonesService) { }
   category:any;
   ngOnInit() {
-    var url;
+    var url="http://localhost:3000/api/ZoneMsts";
     this.zoneService.getAlldata(url).then(zones=>{
       this.zones=zones;
     })
