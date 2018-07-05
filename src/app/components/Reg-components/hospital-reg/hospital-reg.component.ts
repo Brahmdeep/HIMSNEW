@@ -31,10 +31,10 @@ export class HospitalRegComponent implements OnInit {
   private sendData:SendDataService) { }
 
   ngOnInit() {
-   
+   var url;
     this.uniqueid="H"+Date.now();
     console.log(this.uniqueid);
-    this.zoneService.getAllZones().then(zones=>{
+    this.zoneService.getAlldata(url).then(zones=>{
       this.zones=zones;
     })
     this.zoneService.getAllDivisions().then(divisions=>{

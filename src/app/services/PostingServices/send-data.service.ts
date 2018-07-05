@@ -52,5 +52,24 @@ export class SendDataService {
       })
     })
   }
+  modifydata(url,data){
+    return new Promise(resolve=>{
+      this.http.put(url,data).subscribe(data=>{
+        resolve(data);
+      },err=>{
+        console.log(err);
+      })
+    })
+  }
+  adddata(url,data){
+    console.log(data);
+    return new Promise(resolve=>{
+      this.http.post(url,data).subscribe(data=>{
+        resolve(data);
+      },err=>{
+        console.log(data);
+      })
+    })
+  }
   
 }

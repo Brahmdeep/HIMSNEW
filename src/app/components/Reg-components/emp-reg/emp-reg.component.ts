@@ -22,7 +22,8 @@ export class EmpRegComponent implements OnInit {
   constructor(private zoneService:ZonesService) { }
   category:any;
   ngOnInit() {
-    this.zoneService.getAllZones().then(zones=>{
+    var url;
+    this.zoneService.getAlldata(url).then(zones=>{
       this.zones=zones;
     })
     this.zoneService.getAllDivisions().then(divisions=>{

@@ -19,6 +19,9 @@ import{ValidateService} from './services/ValidationServices/validate.service'
 import{SendDataService} from './services/PostingServices/send-data.service'
 import { HttpModule } from '@angular/http';
 import { HospitalRegComponent } from './components/Reg-components/hospital-reg/hospital-reg.component';
+import { QbeComponent } from './components/qbe/qbe.component';
+import { QbeExampleComponent } from './components/qbe-model/qbe-example/qbe-example.component';
+import { MedicalStaffComponent } from './components/qbe-model/medical-staff/medical-staff.component';
 
 
 @NgModule({
@@ -32,7 +35,10 @@ import { HospitalRegComponent } from './components/Reg-components/hospital-reg/h
     SceComponent,
     BasicinfoComponent,
     InvestComponent,
-    HospitalRegComponent
+    HospitalRegComponent,
+    QbeComponent,
+    QbeExampleComponent,
+    MedicalStaffComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +51,9 @@ import { HospitalRegComponent } from './components/Reg-components/hospital-reg/h
       {path:'checkup/gpe',component:GpeComponent},
       {path:'checkup/sce',component:SceComponent},
       {path:'checkup/invest',component:InvestComponent},
-      {path:'hospitalreg',component:HospitalRegComponent}
+      {path:'hospitalreg',component:HospitalRegComponent},
+      {path:'qbeexample',component:QbeExampleComponent},
+      {path:'medstaff',component:MedicalStaffComponent}
     ]),
     HttpClientModule,
     CommonModule,

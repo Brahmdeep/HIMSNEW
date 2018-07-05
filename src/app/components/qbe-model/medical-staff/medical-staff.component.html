@@ -1,0 +1,45 @@
+
+<input class="form-control"  #box (keyup.enter)="onEnter(box.value,box1.value)" type="text" id="SearchBox" placeholder="Enter the Speciality">
+<div style="text-align: center">
+  <p style="text-align: center">OR</p>
+</div>
+<input class="form-control" #box1 (keyup.enter)="onEnter(box.value,box1.value)" type="text" id="SearchBox" placeholder="Enter the Designation">
+
+
+
+<table class="table table-striped" style="width:100%">
+  <thead class="bg-info">
+      <tr>
+          <th>Emp-Id</th>
+          <th>Designation</th> 
+          <th>Name</th>
+          <th>Speciality</th>
+      </tr>
+  </thead>
+  
+     
+  
+  <tr *ngFor="let doctor of doctors">
+    <td><input type="text"  class="form-control" readonly name="" id="" value="{{doctor.empid}}"></td>
+    <td><input #box2 (keyup.enter)="onEnter3(box2.value,box3.value,box4.value,doctor)" type="text" name="" id="" value="{{doctor.designation}}" class="form-control"></td>
+    <td><input #box3 (keyup.enter)="onEnter3(box2.value,box3.value,box4.value,doctor)" type="text" name="" id="" value="{{doctor.name}}" class="form-control"></td>
+    <td><input #box4 (keyup.enter)="onEnter3(box2.value,box3.value,box4.value,doctor)" type="text" name="" id="" value="{{doctor.speciality}}" class="form-control"></td>
+  </tr>
+</table>
+<form>
+    <div class="form-row">
+      <div class="form-group col-lg-3 col-md-3">
+        <input type="text" class="form-control" id="input41" placeholder="empid" [(ngModel)]="empid" name="empid" required>
+      </div>
+      <div class="form-group col-lg-3 col-md-3">
+          <input type="text" class="form-control" id="input42" placeholder="designation" [(ngModel)]="designation" name="designation" required>
+      </div>
+      <div class="form-group col-lg-3 col-md-3">
+            <input type="text" class="form-control" id="input43" placeholder="name" [(ngModel)]="name" name="name" required>
+      </div>
+      <div class="form-group col-lg-3 col-md-3">
+          <input type="text" class="form-control" id="input44" placeholder="speciality" [(ngModel)]="speciality" name="speciality" required>
+    </div>
+      <button type="submit" (click)="onsubmitAdd()" class="btn btn-primary" style="margin-left:50%">Add</button>
+    </div>  
+</form>

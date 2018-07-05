@@ -9,9 +9,9 @@ import { resolve } from 'url';
 export class ZonesService {
   constructor(private http:HttpClient) {}
   // For rest webservice from zone
-  getAllZones(){
+  getAlldata(url){
     return new Promise(resolve=>{
-      this.http.get('http://localhost:3000/api/ZoneMsts').subscribe(data=>{
+      this.http.get(url).subscribe(data=>{
         resolve(data);
       },err=>{
         console.log(err);
