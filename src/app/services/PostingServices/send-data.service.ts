@@ -67,7 +67,16 @@ export class SendDataService {
       this.http.post(url,data).subscribe(data=>{
         resolve(data);
       },err=>{
-        console.log(data);
+        console.log(err);
+      })
+    })
+  }
+  deleteData(url,data){
+    return new Promise(resolve=>{
+      this.http.put(url,data).subscribe(data=>{
+        resolve(data);
+      },err=>{
+        console.log(err);
       })
     })
   }

@@ -32,14 +32,16 @@ export class QbeExampleComponent implements OnInit {
 
   ngOnInit() {
   }
-  onEnter(value: string) { 
+  onEnter(value: string,value2:string) { 
     this.divisions=[];
     this.value = value;
-    console.log(this.value);
-    if(this.value==undefined||this.value==""){
+    console.log("value 1"+this.value+"value2 ="+value2);
+    if(this.value=="" && value2==""){
       this.flashMessage.show('Please Enter a Value',{cssClass:'alert-danger',timeout:3000}); 
-    }else{
+    }else if(this.value!=""){
       this.requestUrl="http://localhost:3000/api/DivisionMsts?filter=%7B%22where%22%3A%7B%22znCd%22%3A%22"+this.value+"%22%7D%7D";
+    }else if(value2!=""){
+      this.requestUrl="http://localhost:3000/api/DivisionMsts?filter=%7B%22where%22%3A%7B%22divCd%22%3A%20%22"+value2+"%22%7D%7D";
     }
     this.getreq.getAlldata(this.requestUrl).then(data=>{
       this.divisions=data;
@@ -71,6 +73,17 @@ export class QbeExampleComponent implements OnInit {
       this.flashMessage.show('Added Successfully!',{cssClass:'alert-success',timeout:3000}); 
       // window.location.href="http://localhost:4200/qbeexample";
 
+    }
+    onclickDelete(division){
+      division.znCd=-1;
+      this.requestUrl="http://localhost:3000/api/DivisionMsts";
+      this.sendData.modifydata(this.requestUrl,division).then(data=>{
+        console.log(data);
+      },err=>{
+        console.log(err);
+      })
+      this.flashMessage.show('Deleted Succesfully',{cssClass:'alert-success',timeout:3000}); 
+      window.location.href="http://localhost:4200/qbeexample";  
     }
   }
   

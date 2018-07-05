@@ -1,5 +1,5 @@
 <!-- <app-qbe></app-qbe> -->
-<input class="form-control" #box (keyup.enter)="onEnter(box.value)" type="text" [(ngModel)]="ZoneCode" name="ZoneCode" id="SearchBox" placeholder="Enter the Zone Code">
+<input class="form-control" #box (keyup.enter)="onEnter(box.value,box1.value)" type="text" [(ngModel)]="ZoneCode" name="ZoneCode" id="SearchBox" placeholder="Enter the Zone Code">
 <div style="text-align: center">
     <p style="text-align: center">OR</p>
 </div>
@@ -12,12 +12,14 @@
           <th>Division Code</th>
           <th>Division Name</th> 
           <th>Zone Code</th>
+          <th></th>
       </tr>
   </thead>
   <tr *ngFor="let division of divisions">
     <td><input type="text"  class="form-control" readonly name="" id="" value="{{division.divCd}}"></td>
     <td><input #box2 (keyup.enter)="onEnter3(box2.value,box3.value,division)" type="text" name="" id="" value="{{division.divNm}}" class="form-control"></td>
     <td><input #box3 (keyup.enter)="onEnter3(box2.value,box3.value,division)" type="text" name="" id="" value="{{division.znCd}}" class="form-control"></td>
+    <td><button class="btn btn-danger" (click)="onclickDelete(division)">Delete</button></td>    
   </tr>
 </table>
 <form>

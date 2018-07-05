@@ -79,4 +79,17 @@ export class MedicalStaffComponent implements OnInit {
   }
 
 
+  onclickDelete(doctor){
+    doctor.speciality=-1;
+    doctor.designation=-1;
+    this.requestUrl="http://localhost:3000/api/MedicalStaffQbes";
+    this.sendData.modifydata(this.requestUrl,doctor).then(data=>{
+      console.log(data);
+    },err=>{
+      console.log(err);
+    })
+    this.flashMessage.show('Deleted Succesfully',{cssClass:'alert-success',timeout:3000}); 
+    window.location.href="http://localhost:4200/medstaff";
+  }
+
 }
